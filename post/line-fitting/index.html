@@ -16,9 +16,9 @@
     
   },
   "name":"Zhaoyc\u0027s blog",
-  "description":"\u003cp\u003eHello, this is my first blog. This site was built by \u003ccode\u003eHugo\u003c\/code\u003e.\u003c\/p\u003e",
-  "url":"https:\/\/imalanzhao.github.io\/post\/first-post\/",
-  "keywords":"[tech]"
+  "description":"\u003cp\u003e本文所使用的方法及推导来源于书籍《Computer and Robot Vision》VOLUME 1—— Robert M. Haralick; Linda G. Sharpiro。参考11.7章\u0026quot;Line Fitting\u0026quot;。\u003c\/p\u003e",
+  "url":"https:\/\/imalanzhao.github.io\/post\/line-fitting\/",
+  "keywords":"[line-fitting]"
 }
 
 </script>
@@ -27,40 +27,40 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="generator" content="Hugo 0.92.2 with theme Tranquilpeak 0.5.3-BETA">
 <meta name="author" content="Zhaoyc">
-<meta name="keywords" content="tech">
-<meta name="description" content="Hello, this is my first blog. This site was built by Hugo.">
+<meta name="keywords" content="line-fitting">
+<meta name="description" content="本文所使用的方法及推导来源于书籍《Computer and Robot Vision》VOLUME 1—— Robert M. Haralick; Linda G. Sharpiro。参考11.7章&quot;Line Fitting&quot;。">
 
 
-<meta property="og:description" content="Hello, this is my first blog. This site was built by Hugo.">
+<meta property="og:description" content="本文所使用的方法及推导来源于书籍《Computer and Robot Vision》VOLUME 1—— Robert M. Haralick; Linda G. Sharpiro。参考11.7章&quot;Line Fitting&quot;。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="First Post--My first trying blog">
-<meta name="twitter:title" content="First Post--My first trying blog">
-<meta property="og:url" content="https://imalanzhao.github.io/post/first-post/">
-<meta property="twitter:url" content="https://imalanzhao.github.io/post/first-post/">
+<meta property="og:title" content="直线拟合(最小二乘法)">
+<meta name="twitter:title" content="直线拟合(最小二乘法)">
+<meta property="og:url" content="https://imalanzhao.github.io/post/line-fitting/">
+<meta property="twitter:url" content="https://imalanzhao.github.io/post/line-fitting/">
 <meta property="og:site_name" content="Zhaoyc&#39;s blog">
-<meta property="og:description" content="Hello, this is my first blog. This site was built by Hugo.">
-<meta name="twitter:description" content="Hello, this is my first blog. This site was built by Hugo.">
+<meta property="og:description" content="本文所使用的方法及推导来源于书籍《Computer and Robot Vision》VOLUME 1—— Robert M. Haralick; Linda G. Sharpiro。参考11.7章&quot;Line Fitting&quot;。">
+<meta name="twitter:description" content="本文所使用的方法及推导来源于书籍《Computer and Robot Vision》VOLUME 1—— Robert M. Haralick; Linda G. Sharpiro。参考11.7章&quot;Line Fitting&quot;。">
 <meta property="og:locale" content="zh-cn">
 
   
-    <meta property="article:published_time" content="2022-02-17T21:26:30">
+    <meta property="article:published_time" content="2022-02-20T21:22:33">
   
   
-    <meta property="article:modified_time" content="2022-02-17T21:26:30">
+    <meta property="article:modified_time" content="2022-02-20T21:22:33">
   
-  
-  
-    
-      <meta property="article:section" content="test">
-    
-      <meta property="article:section" content="subcategory">
-    
   
   
     
-      <meta property="article:tag" content="test">
+      <meta property="article:section" content="engineering">
     
-      <meta property="article:tag" content="tag2">
+      <meta property="article:section" content="fitting">
+    
+  
+  
+    
+      <meta property="article:tag" content="engineering">
+    
+      <meta property="article:tag" content="least-square">
     
   
 
@@ -81,14 +81,14 @@
 
 
 
-    <title>First Post--My first trying blog</title>
+    <title>直线拟合(最小二乘法)</title>
 
     <link rel="icon" href="https://imalanzhao.github.io/favicon.png">
     
 
     
 
-    <link rel="canonical" href="https://imalanzhao.github.io/post/first-post/">
+    <link rel="canonical" href="https://imalanzhao.github.io/post/line-fitting/">
 
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -249,15 +249,15 @@
             <div class="post-header main-content-wrap text-left">
   
     <h1 class="post-title">
-      First Post--My first trying blog
+      直线拟合(最小二乘法)
     </h1>
   
   
   <div class="postShorten-meta post-meta">
     
-      <time datetime="2022-02-17T21:26:30&#43;08:00">
+      <time datetime="2022-02-20T21:22:33&#43;08:00">
         
-  二月 17, 2022
+  二月 20, 2022
 
       </time>
     
@@ -266,9 +266,9 @@
   
     <span>发布在</span>
     
-      <a class="category-link" href="https://imalanzhao.github.io/categories/test">test</a>, 
+      <a class="category-link" href="https://imalanzhao.github.io/categories/engineering">engineering</a>, 
     
-      <a class="category-link" href="https://imalanzhao.github.io/categories/subcategory">subcategory</a>
+      <a class="category-link" href="https://imalanzhao.github.io/categories/fitting">fitting</a>
     
   
 
@@ -278,44 +278,69 @@
           
           <div class="post-content markdown">
             <div class="main-content-wrap">
-              <p>Hello, this is my first blog. This site was built by <code>Hugo</code>.</p>
-<h1 id="about-me">About me</h1>
-<p>Hello, this is my first blog. This site was built by <code>Hugo</code>.
-I&rsquo;m a software engneer using C# to write Windows' software.</p>
-<h1 id="technology">Technology</h1>
-<p>In my daily job, I use C# mostly.</p>
-<h1 id="formula-test">Formula Test</h1>
-<p>$$
-A =
-\begin{matrix}
-1 &amp; x &amp; x^2 \
-1 &amp; y &amp; y^2 \
-1 &amp; z &amp; z^2 \
-\end{matrix}
+              <p>本文所使用的方法及推导来源于书籍《Computer and Robot Vision》VOLUME 1—— Robert M. Haralick; Linda G. Sharpiro。参考11.7章&quot;Line Fitting&quot;。</p>
+<p>不同于通常搜索到的直线拟合方法，本文不基于$y=ax+b$公式拟合直线，而是使用更有普适性的$\alpha r_n + \beta c_n + \gamma = 0$公式。并且，为了防止出现$\alpha=\beta=\gamma=0$的情况，加入了拉格朗日乘子。</p>
+<h2 id="公式">公式</h2>
+<p>$y=ax+b$ 是更为大家熟知的直线公式，但是这个公式无法拟合垂直于X轴的直线(类似$x=1$的直线)的情况，所以本文使用更具普适性的公式：
+$$
+\alpha r_n + \beta c_n + \gamma = 0
+$$
+在这个公式中，$(r_n,c_n)$是用于拟合的点，$n$从1到N。</p>
+<p>我们的目标是得到点集到直线的距离的平方的和的最小值，数学表示为：
+$$
+\epsilon^2=\sum_{n=1}^{N}{(\alpha r_n+ \beta c_n + \gamma)^2}
+$$
+即我们的目标是找出恰当的$\alpha$,$\beta$,$\gamma$的值，使得$\epsilon^2$最小。</p>
+<h2 id="拉格朗日乘子">拉格朗日乘子</h2>
+<p>为防止出现$\alpha=\beta=\gamma=0$，我们中加入拉格朗日乘子$\alpha^2+\beta^2=1$为约束条件。加入拉格朗日乘子后，我们重新定义我们的目标：
+$$
+\epsilon^2=\sum_{n=1}^{N}{(\alpha r_n+ \beta c_n + \gamma)^2}- \lambda(\alpha^2+\beta^2-1)N
+$$
+现在我们的目标是找出恰当的$\alpha$,$\beta$,$\gamma$,$\lambda$的值，使得$\epsilon^2$最小。</p>
+<h2 id="使用最小二乘法">使用最小二乘法</h2>
+<p>根据最小二乘法，我们得到以下方程组：
+$$
+\frac{\partial\epsilon^2}{\partial\alpha}=\sum_{n=1}^{N}{2<a href="r_n-u_r">\alpha(r_n-u_r)+\beta(c_n-u_c)</a>-2\lambda\alpha N}=0
+$$
+$$
+\frac{\partial\epsilon^2}{\partial\beta}=\sum_{n=1}^{N}{2<a href="c_n-u_c">\alpha(r_n-u_r)+\beta(c_n-u_c)</a>-2\lambda\beta N}=0
+$$
+$$
+\frac{\partial\epsilon^2}{\partial\gamma}=2\sum_{n=1}^{N}{(\alpha r_n + \beta c_n + \gamma)}=0
+$$
+通过整理公式我们可以得到更明确的方程组：
+$$
+\alpha=\frac{u_{rc}}{\sqrt{u_{rc}^2 + (\lambda - u_{rr})^2}}
+$$
+$$
+\beta=\frac{\lambda - u_{rr}}{\sqrt{u_{rc}^2 + (\lambda - u_{rr})^2}}
+$$
+$$
+\gamma=-(\alpha u_r + \beta u_c)
+$$
+这里$u_r$,$u_c$,$u_{rr}$,$u_{rc}$,$u_{cc}$：
+$$
+u_r=\frac{1}{N}\sum_{n=1}^{N}{r_n}
+$$
+$$
+u_c=\frac{1}{N}\sum_{n=1}^{N}{c_n}
+$$
+$$
+u_{rr}=\frac{1}{N-1}\sum_{n=1}^{N}{(r_n-u_r)^2}
+$$
+$$
+u_{cc}=\frac{1}{N-1}\sum_{n=1}^{N}{(c_n-u_c)^2}
+$$
+$$
+u_{rc}=\frac{1}{N-1}\sum_{n=1}^{N}{(r_n-u_r)(c_n-u_c)}
 $$</p>
-<p>$$
-I=\begin{bmatrix}
-1 &amp; \\
-&amp; 1&amp;  \\
-&amp; &amp; 1
-\end{bmatrix}
+<h2 id="求解-lambda">求解 $\lambda$</h2>
+<p>为了求解$\alpha$,$\beta$,$\gamma$，我们首先要求解$\lambda$。因为才疏学浅，我还没搞懂原文中求解的原理，所以没有整理出来，这里直接给出$\lambda求解公式。
+$$
+\lambda=\frac{(u_{rr}+u_{cc})-\sqrt{(u_{rr}+u_{cc})^2-4(u_{rr}u_{cc}-u_{rc}^2)}}{2} \newline =\frac{(u_{rr}+u_{cc})-\sqrt{(u_{rr}+u_{cc})^2-4{rc}^2}}{2}
 $$</p>
-<p>$$
-\begin{bmatrix}
-1&amp; 2&amp; 3 \\
-4&amp; 5&amp; 6 \\
-7&amp; 8&amp; 9 \\
-\end{bmatrix}
-$$</p>
-<p>$$
-\begin{equation}
-\begin{aligned}
-&amp; \frac{dy}{dt} = f(t, y) \\
-&amp; y(t_0) = y_0
-\end{aligned}
-\label{eq1}
-\end{equation}
-$$</p>
+<h2 id="代码实现">代码实现</h2>
+<p>代码其实很好实现，根据公式计算出$u_r$,$u_c$,$u_{rr}$,$u_{rc}$,$u_{cc}$的值，就可以逐一求出$\lambda$,$\alpha$,$\beta$,$\gamma$。</p>
               
 
 
@@ -329,9 +354,9 @@ $$</p>
                   <div class="post-footer-tags">
                     <span class="text-color-light text-small">标签</span><br/>
                     
-  <a class="tag tag--primary tag--small" href="https://imalanzhao.github.io/tags/test/">test</a>
+  <a class="tag tag--primary tag--small" href="https://imalanzhao.github.io/tags/engineering/">engineering</a>
 
-  <a class="tag tag--primary tag--small" href="https://imalanzhao.github.io/tags/tag2/">tag2</a>
+  <a class="tag tag--primary tag--small" href="https://imalanzhao.github.io/tags/least-square/">least-square</a>
 
                   </div>
                 
@@ -344,7 +369,7 @@ $$</p>
       
         <li class="post-action">
           
-            <a class="post-action-btn btn btn--default tooltip--top" href="https://imalanzhao.github.io/post/line-fitting/" data-tooltip="直线拟合(最小二乘法)" aria-label="下一篇: 直线拟合(最小二乘法)">
+            <a class="post-action-btn btn btn--disabled">
           
               <i class="fa fa-angle-left"></i>
               <span class="hide-xs hide-sm text-small icon-ml">下一篇</span>
@@ -352,7 +377,7 @@ $$</p>
         </li>
         <li class="post-action">
           
-            <a class="post-action-btn btn btn--disabled">
+            <a class="post-action-btn btn btn--default tooltip--top" href="https://imalanzhao.github.io/post/first-post/" data-tooltip="First Post--My first trying blog" aria-label="上一篇: First Post--My first trying blog">
           
               <span class="hide-xs hide-sm text-small icon-mr">上一篇</span>
               <i class="fa fa-angle-right"></i>
@@ -370,19 +395,19 @@ $$</p>
     </li>
     
       <li class="post-action hide-xs">
-        <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://imalanzhao.github.io/post/first-post/" title="分享到 Facebook" aria-label="分享到 Facebook">
+        <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://imalanzhao.github.io/post/line-fitting/" title="分享到 Facebook" aria-label="分享到 Facebook">
           <i class="fab fa-facebook-square" aria-hidden="true"></i>
         </a>
       </li>
     
       <li class="post-action hide-xs">
-        <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://imalanzhao.github.io/post/first-post/" title="分享到 Twitter" aria-label="分享到 Twitter">
+        <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://imalanzhao.github.io/post/line-fitting/" title="分享到 Twitter" aria-label="分享到 Twitter">
           <i class="fab fa-twitter" aria-hidden="true"></i>
         </a>
       </li>
     
       <li class="post-action hide-xs">
-        <a class="post-action-btn btn btn--default" target="new" href="https://www.linkedin.com/sharing/share-offsite/?url=https://imalanzhao.github.io/post/first-post/" title="分享到 Linkedin" aria-label="分享到 Linkedin">
+        <a class="post-action-btn btn btn--default" target="new" href="https://www.linkedin.com/sharing/share-offsite/?url=https://imalanzhao.github.io/post/line-fitting/" title="分享到 Linkedin" aria-label="分享到 Linkedin">
           <i class="fab fa-linkedin" aria-hidden="true"></i>
         </a>
       </li>
@@ -413,9 +438,9 @@ $$</p>
     </div>
     <script type="text/javascript">
       var disqus_config = function() {
-        this.page.url = 'https:\/\/imalanzhao.github.io\/post\/first-post\/';
+        this.page.url = 'https:\/\/imalanzhao.github.io\/post\/line-fitting\/';
         
-          this.page.identifier = '\/post\/first-post\/'
+          this.page.identifier = '\/post\/line-fitting\/'
         
       };
       (function() {
@@ -451,7 +476,7 @@ $$</p>
       
         <li class="post-action">
           
-            <a class="post-action-btn btn btn--default tooltip--top" href="https://imalanzhao.github.io/post/line-fitting/" data-tooltip="直线拟合(最小二乘法)" aria-label="下一篇: 直线拟合(最小二乘法)">
+            <a class="post-action-btn btn btn--disabled">
           
               <i class="fa fa-angle-left"></i>
               <span class="hide-xs hide-sm text-small icon-ml">下一篇</span>
@@ -459,7 +484,7 @@ $$</p>
         </li>
         <li class="post-action">
           
-            <a class="post-action-btn btn btn--disabled">
+            <a class="post-action-btn btn btn--default tooltip--top" href="https://imalanzhao.github.io/post/first-post/" data-tooltip="First Post--My first trying blog" aria-label="上一篇: First Post--My first trying blog">
           
               <span class="hide-xs hide-sm text-small icon-mr">上一篇</span>
               <i class="fa fa-angle-right"></i>
@@ -477,19 +502,19 @@ $$</p>
     </li>
     
       <li class="post-action hide-xs">
-        <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://imalanzhao.github.io/post/first-post/" title="分享到 Facebook" aria-label="分享到 Facebook">
+        <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://imalanzhao.github.io/post/line-fitting/" title="分享到 Facebook" aria-label="分享到 Facebook">
           <i class="fab fa-facebook-square" aria-hidden="true"></i>
         </a>
       </li>
     
       <li class="post-action hide-xs">
-        <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://imalanzhao.github.io/post/first-post/" title="分享到 Twitter" aria-label="分享到 Twitter">
+        <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://imalanzhao.github.io/post/line-fitting/" title="分享到 Twitter" aria-label="分享到 Twitter">
           <i class="fab fa-twitter" aria-hidden="true"></i>
         </a>
       </li>
     
       <li class="post-action hide-xs">
-        <a class="post-action-btn btn btn--default" target="new" href="https://www.linkedin.com/sharing/share-offsite/?url=https://imalanzhao.github.io/post/first-post/" title="分享到 Linkedin" aria-label="分享到 Linkedin">
+        <a class="post-action-btn btn btn--default" target="new" href="https://www.linkedin.com/sharing/share-offsite/?url=https://imalanzhao.github.io/post/line-fitting/" title="分享到 Linkedin" aria-label="分享到 Linkedin">
           <i class="fab fa-linkedin" aria-hidden="true"></i>
         </a>
       </li>
@@ -520,19 +545,19 @@ $$</p>
   <ul class="share-options">
     
       <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fimalanzhao.github.io%2Fpost%2Ffirst-post%2F" aria-label="分享到 Facebook">
+        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fimalanzhao.github.io%2Fpost%2Fline-fitting%2F" aria-label="分享到 Facebook">
           <i class="fab fa-facebook-square" aria-hidden="true"></i><span>分享到 Facebook</span>
         </a>
       </li>
     
       <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3A%2F%2Fimalanzhao.github.io%2Fpost%2Ffirst-post%2F" aria-label="分享到 Twitter">
+        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3A%2F%2Fimalanzhao.github.io%2Fpost%2Fline-fitting%2F" aria-label="分享到 Twitter">
           <i class="fab fa-twitter" aria-hidden="true"></i><span>分享到 Twitter</span>
         </a>
       </li>
     
       <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fimalanzhao.github.io%2Fpost%2Ffirst-post%2F" aria-label="分享到 Linkedin">
+        <a class="share-option-btn" target="new" href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fimalanzhao.github.io%2Fpost%2Fline-fitting%2F" aria-label="分享到 Linkedin">
           <i class="fab fa-linkedin" aria-hidden="true"></i><span>分享到 Linkedin</span>
         </a>
       </li>

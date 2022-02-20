@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Zhaoyc&#39;s blog</title>
-    <link>https://imalanzhao.github.io/</link>
-    <description>Recent content on Zhaoyc&#39;s blog</description>
+    <title>engineering on Zhaoyc&#39;s blog</title>
+    <link>https://imalanzhao.github.io/tags/engineering/</link>
+    <description>Recent content in engineering on Zhaoyc&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sun, 20 Feb 2022 21:22:33 +0800</lastBuildDate><atom:link href="https://imalanzhao.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 20 Feb 2022 21:22:33 +0800</lastBuildDate><atom:link href="https://imalanzhao.github.io/tags/engineering/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>直线拟合(最小二乘法)</title>
       <link>https://imalanzhao.github.io/post/line-fitting/</link>
@@ -14,15 +14,6 @@
       
       <guid>https://imalanzhao.github.io/post/line-fitting/</guid>
       <description>&lt;p&gt;本文所使用的方法及推导来源于书籍《Computer and Robot Vision》VOLUME 1—— Robert M. Haralick; Linda G. Sharpiro。参考11.7章&amp;quot;Line Fitting&amp;quot;。&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>First Post--My first trying blog</title>
-      <link>https://imalanzhao.github.io/post/first-post/</link>
-      <pubDate>Thu, 17 Feb 2022 21:26:30 +0800</pubDate>
-      
-      <guid>https://imalanzhao.github.io/post/first-post/</guid>
-      <description>&lt;p&gt;Hello, this is my first blog. This site was built by &lt;code&gt;Hugo&lt;/code&gt;.&lt;/p&gt;</description>
     </item>
     
   </channel>
