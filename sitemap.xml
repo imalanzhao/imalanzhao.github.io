@@ -2,8 +2,26 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://imalanzhao.github.io/post/arch-linux_partition/</loc>
+    <lastmod>2022-03-05T23:04:57+08:00</lastmod>
+  </url><url>
     <loc>https://imalanzhao.github.io/categories/</loc>
-    <lastmod>2022-02-20T21:22:33+08:00</lastmod>
+    <lastmod>2022-03-05T23:04:57+08:00</lastmod>
+  </url><url>
+    <loc>https://imalanzhao.github.io/tags/linux/</loc>
+    <lastmod>2022-03-05T23:04:57+08:00</lastmod>
+  </url><url>
+    <loc>https://imalanzhao.github.io/categories/linux/</loc>
+    <lastmod>2022-03-05T23:04:57+08:00</lastmod>
+  </url><url>
+    <loc>https://imalanzhao.github.io/post/</loc>
+    <lastmod>2022-03-05T23:04:57+08:00</lastmod>
+  </url><url>
+    <loc>https://imalanzhao.github.io/tags/</loc>
+    <lastmod>2022-03-05T23:04:57+08:00</lastmod>
+  </url><url>
+    <loc>https://imalanzhao.github.io/</loc>
+    <lastmod>2022-03-05T23:04:57+08:00</lastmod>
   </url><url>
     <loc>https://imalanzhao.github.io/tags/engineering/</loc>
     <lastmod>2022-02-20T21:22:33+08:00</lastmod>
@@ -15,15 +33,6 @@
     <lastmod>2022-02-20T21:22:33+08:00</lastmod>
   </url><url>
     <loc>https://imalanzhao.github.io/tags/least-square/</loc>
-    <lastmod>2022-02-20T21:22:33+08:00</lastmod>
-  </url><url>
-    <loc>https://imalanzhao.github.io/post/</loc>
-    <lastmod>2022-02-20T21:22:33+08:00</lastmod>
-  </url><url>
-    <loc>https://imalanzhao.github.io/tags/</loc>
-    <lastmod>2022-02-20T21:22:33+08:00</lastmod>
-  </url><url>
-    <loc>https://imalanzhao.github.io/</loc>
     <lastmod>2022-02-20T21:22:33+08:00</lastmod>
   </url><url>
     <loc>https://imalanzhao.github.io/post/line-fitting/</loc>

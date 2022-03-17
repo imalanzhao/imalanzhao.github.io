@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Linux on Zhaoyc&#39;s blog</title>
+    <link>https://imalanzhao.github.io/tags/linux/</link>
+    <description>Recent content in Linux on Zhaoyc&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sat, 05 Mar 2022 23:04:57 +0800</lastBuildDate><atom:link href="https://imalanzhao.github.io/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Arch Linux硬盘分区</title>
+      <link>https://imalanzhao.github.io/post/arch-linux_partition/</link>
+      <pubDate>Sat, 05 Mar 2022 23:04:57 +0800</pubDate>
+      
+      <guid>https://imalanzhao.github.io/post/arch-linux_partition/</guid>
+      <description>&lt;p&gt;一直记不住硬盘分区的命令，恰巧最近又折腾Linux，特记录一下。&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

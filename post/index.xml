@@ -6,7 +6,16 @@
     <description>Recent content in Posts on Zhaoyc&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sun, 20 Feb 2022 21:22:33 +0800</lastBuildDate><atom:link href="https://imalanzhao.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 05 Mar 2022 23:04:57 +0800</lastBuildDate><atom:link href="https://imalanzhao.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Arch Linux硬盘分区</title>
+      <link>https://imalanzhao.github.io/post/arch-linux_partition/</link>
+      <pubDate>Sat, 05 Mar 2022 23:04:57 +0800</pubDate>
+      
+      <guid>https://imalanzhao.github.io/post/arch-linux_partition/</guid>
+      <description>&lt;p&gt;一直记不住硬盘分区的命令，恰巧最近又折腾Linux，特记录一下。&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>直线拟合(最小二乘法)</title>
       <link>https://imalanzhao.github.io/post/line-fitting/</link>
