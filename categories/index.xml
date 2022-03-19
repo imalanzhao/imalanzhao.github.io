@@ -6,22 +6,49 @@
     <description>Recent content in Categories on Zhaoyc&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sat, 05 Mar 2022 23:04:57 +0800</lastBuildDate><atom:link href="https://imalanzhao.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 19 Mar 2022 11:44:18 +0800</lastBuildDate><atom:link href="https://imalanzhao.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Linux</title>
-      <link>https://imalanzhao.github.io/categories/linux/</link>
-      <pubDate>Sat, 05 Mar 2022 23:04:57 +0800</pubDate>
+      <title>convolution</title>
+      <link>https://imalanzhao.github.io/categories/convolution/</link>
+      <pubDate>Sat, 19 Mar 2022 11:44:18 +0800</pubDate>
       
-      <guid>https://imalanzhao.github.io/categories/linux/</guid>
+      <guid>https://imalanzhao.github.io/categories/convolution/</guid>
       <description></description>
     </item>
     
     <item>
       <title>engineering</title>
       <link>https://imalanzhao.github.io/categories/engineering/</link>
-      <pubDate>Sun, 20 Feb 2022 21:22:33 +0800</pubDate>
+      <pubDate>Sat, 19 Mar 2022 11:44:18 +0800</pubDate>
       
       <guid>https://imalanzhao.github.io/categories/engineering/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>DFT</title>
+      <link>https://imalanzhao.github.io/categories/dft/</link>
+      <pubDate>Sat, 19 Mar 2022 11:36:50 +0800</pubDate>
+      
+      <guid>https://imalanzhao.github.io/categories/dft/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>IDFT</title>
+      <link>https://imalanzhao.github.io/categories/idft/</link>
+      <pubDate>Sat, 19 Mar 2022 11:36:50 +0800</pubDate>
+      
+      <guid>https://imalanzhao.github.io/categories/idft/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Linux</title>
+      <link>https://imalanzhao.github.io/categories/linux/</link>
+      <pubDate>Sat, 05 Mar 2022 23:04:57 +0800</pubDate>
+      
+      <guid>https://imalanzhao.github.io/categories/linux/</guid>
       <description></description>
     </item>
     

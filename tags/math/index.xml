@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>engineering on Zhaoyc&#39;s blog</title>
-    <link>https://imalanzhao.github.io/tags/engineering/</link>
-    <description>Recent content in engineering on Zhaoyc&#39;s blog</description>
+    <title>math on Zhaoyc&#39;s blog</title>
+    <link>https://imalanzhao.github.io/tags/math/</link>
+    <description>Recent content in math on Zhaoyc&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sat, 19 Mar 2022 11:44:18 +0800</lastBuildDate><atom:link href="https://imalanzhao.github.io/tags/engineering/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 19 Mar 2022 11:44:18 +0800</lastBuildDate><atom:link href="https://imalanzhao.github.io/tags/math/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>卷积的理解</title>
       <link>https://imalanzhao.github.io/post/understanding_of_convolution/</link>
@@ -23,15 +23,6 @@
       
       <guid>https://imalanzhao.github.io/post/discrete_fourier_transform/</guid>
       <description>&lt;p&gt;本文主要记录我在复习《信号与系统》中对离散傅里叶变换的一些心得，同时列出了一维二维离散傅里叶变换的公式，便于需要时进行查阅。&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>直线拟合(最小二乘法)</title>
-      <link>https://imalanzhao.github.io/post/line-fitting/</link>
-      <pubDate>Sun, 20 Feb 2022 21:22:33 +0800</pubDate>
-      
-      <guid>https://imalanzhao.github.io/post/line-fitting/</guid>
-      <description>&lt;p&gt;本文所使用的方法及推导来源于书籍《Computer and Robot Vision》VOLUME 1—— Robert M. Haralick; Linda G. Sharpiro。参考11.7章&amp;quot;Line Fitting&amp;quot;。&lt;/p&gt;</description>
     </item>
     
   </channel>

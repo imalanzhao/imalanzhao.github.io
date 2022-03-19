@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>convolution on Zhaoyc&#39;s blog</title>
+    <link>https://imalanzhao.github.io/categories/convolution/</link>
+    <description>Recent content in convolution on Zhaoyc&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sat, 19 Mar 2022 11:44:18 +0800</lastBuildDate><atom:link href="https://imalanzhao.github.io/categories/convolution/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>卷积的理解</title>
+      <link>https://imalanzhao.github.io/post/understanding_of_convolution/</link>
+      <pubDate>Sat, 19 Mar 2022 11:44:18 +0800</pubDate>
+      
+      <guid>https://imalanzhao.github.io/post/understanding_of_convolution/</guid>
+      <description>&lt;p&gt;本文的重点是摘抄了《信号与系统》一书中卷积过程图形化的叙述，主要是这一叙述解决了我多年来对卷积物理意义的困惑。&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

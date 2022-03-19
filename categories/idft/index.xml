@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>IDFT on Zhaoyc&#39;s blog</title>
+    <link>https://imalanzhao.github.io/categories/idft/</link>
+    <description>Recent content in IDFT on Zhaoyc&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sat, 19 Mar 2022 11:36:50 +0800</lastBuildDate><atom:link href="https://imalanzhao.github.io/categories/idft/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>离散傅里叶变换</title>
+      <link>https://imalanzhao.github.io/post/discrete_fourier_transform/</link>
+      <pubDate>Sat, 19 Mar 2022 11:36:50 +0800</pubDate>
+      
+      <guid>https://imalanzhao.github.io/post/discrete_fourier_transform/</guid>
+      <description>&lt;p&gt;本文主要记录我在复习《信号与系统》中对离散傅里叶变换的一些心得，同时列出了一维二维离散傅里叶变换的公式，便于需要时进行查阅。&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

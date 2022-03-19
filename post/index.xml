@@ -6,7 +6,25 @@
     <description>Recent content in Posts on Zhaoyc&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sat, 05 Mar 2022 23:04:57 +0800</lastBuildDate><atom:link href="https://imalanzhao.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 19 Mar 2022 11:44:18 +0800</lastBuildDate><atom:link href="https://imalanzhao.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>卷积的理解</title>
+      <link>https://imalanzhao.github.io/post/understanding_of_convolution/</link>
+      <pubDate>Sat, 19 Mar 2022 11:44:18 +0800</pubDate>
+      
+      <guid>https://imalanzhao.github.io/post/understanding_of_convolution/</guid>
+      <description>&lt;p&gt;本文的重点是摘抄了《信号与系统》一书中卷积过程图形化的叙述，主要是这一叙述解决了我多年来对卷积物理意义的困惑。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>离散傅里叶变换</title>
+      <link>https://imalanzhao.github.io/post/discrete_fourier_transform/</link>
+      <pubDate>Sat, 19 Mar 2022 11:36:50 +0800</pubDate>
+      
+      <guid>https://imalanzhao.github.io/post/discrete_fourier_transform/</guid>
+      <description>&lt;p&gt;本文主要记录我在复习《信号与系统》中对离散傅里叶变换的一些心得，同时列出了一维二维离散傅里叶变换的公式，便于需要时进行查阅。&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>Arch Linux硬盘分区</title>
       <link>https://imalanzhao.github.io/post/arch-linux_partition/</link>

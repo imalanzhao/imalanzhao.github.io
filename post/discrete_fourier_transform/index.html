@@ -16,9 +16,9 @@
     
   },
   "name":"Zhaoyc\u0027s blog",
-  "description":"\u003cp\u003e一直记不住硬盘分区的命令，恰巧最近又折腾Linux，特记录一下。\u003c\/p\u003e",
-  "url":"https:\/\/imalanzhao.github.io\/post\/arch-linux_partition\/",
-  "keywords":"[Linux]"
+  "description":"\u003cp\u003e本文主要记录我在复习《信号与系统》中对离散傅里叶变换的一些心得，同时列出了一维二维离散傅里叶变换的公式，便于需要时进行查阅。\u003c\/p\u003e",
+  "url":"https:\/\/imalanzhao.github.io\/post\/discrete_fourier_transform\/",
+  "keywords":"[傅里叶变换]"
 }
 
 </script>
@@ -27,36 +27,44 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="generator" content="Hugo 0.92.2 with theme Tranquilpeak 0.5.3-BETA">
 <meta name="author" content="Zhaoyc">
-<meta name="keywords" content="Linux">
-<meta name="description" content="一直记不住硬盘分区的命令，恰巧最近又折腾Linux，特记录一下。">
+<meta name="keywords" content="傅里叶变换">
+<meta name="description" content="本文主要记录我在复习《信号与系统》中对离散傅里叶变换的一些心得，同时列出了一维二维离散傅里叶变换的公式，便于需要时进行查阅。">
 
 
-<meta property="og:description" content="一直记不住硬盘分区的命令，恰巧最近又折腾Linux，特记录一下。">
+<meta property="og:description" content="本文主要记录我在复习《信号与系统》中对离散傅里叶变换的一些心得，同时列出了一维二维离散傅里叶变换的公式，便于需要时进行查阅。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Arch Linux硬盘分区">
-<meta name="twitter:title" content="Arch Linux硬盘分区">
-<meta property="og:url" content="https://imalanzhao.github.io/post/arch-linux_partition/">
-<meta property="twitter:url" content="https://imalanzhao.github.io/post/arch-linux_partition/">
+<meta property="og:title" content="离散傅里叶变换">
+<meta name="twitter:title" content="离散傅里叶变换">
+<meta property="og:url" content="https://imalanzhao.github.io/post/discrete_fourier_transform/">
+<meta property="twitter:url" content="https://imalanzhao.github.io/post/discrete_fourier_transform/">
 <meta property="og:site_name" content="Zhaoyc&#39;s blog">
-<meta property="og:description" content="一直记不住硬盘分区的命令，恰巧最近又折腾Linux，特记录一下。">
-<meta name="twitter:description" content="一直记不住硬盘分区的命令，恰巧最近又折腾Linux，特记录一下。">
+<meta property="og:description" content="本文主要记录我在复习《信号与系统》中对离散傅里叶变换的一些心得，同时列出了一维二维离散傅里叶变换的公式，便于需要时进行查阅。">
+<meta name="twitter:description" content="本文主要记录我在复习《信号与系统》中对离散傅里叶变换的一些心得，同时列出了一维二维离散傅里叶变换的公式，便于需要时进行查阅。">
 <meta property="og:locale" content="zh-cn">
 
   
-    <meta property="article:published_time" content="2022-03-05T23:04:57">
+    <meta property="article:published_time" content="2022-03-19T11:36:50">
   
   
-    <meta property="article:modified_time" content="2022-03-05T23:04:57">
+    <meta property="article:modified_time" content="2022-03-19T11:36:50">
   
-  
-  
-    
-      <meta property="article:section" content="Linux">
-    
   
   
     
-      <meta property="article:tag" content="Linux">
+      <meta property="article:section" content="engineering">
+    
+      <meta property="article:section" content="DFT">
+    
+      <meta property="article:section" content="IDFT">
+    
+  
+  
+    
+      <meta property="article:tag" content="math">
+    
+      <meta property="article:tag" content="engineering">
+    
+      <meta property="article:tag" content="DFT">
     
   
 
@@ -77,14 +85,14 @@
 
 
 
-    <title>Arch Linux硬盘分区</title>
+    <title>离散傅里叶变换</title>
 
     <link rel="icon" href="https://imalanzhao.github.io/favicon.png">
     
 
     
 
-    <link rel="canonical" href="https://imalanzhao.github.io/post/arch-linux_partition/">
+    <link rel="canonical" href="https://imalanzhao.github.io/post/discrete_fourier_transform/">
 
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -245,15 +253,15 @@
             <div class="post-header main-content-wrap text-left">
   
     <h1 class="post-title">
-      Arch Linux硬盘分区
+      离散傅里叶变换
     </h1>
   
   
   <div class="postShorten-meta post-meta">
     
-      <time datetime="2022-03-05T23:04:57&#43;08:00">
+      <time datetime="2022-03-19T11:36:50&#43;08:00">
         
-  三月 5, 2022
+  三月 19, 2022
 
       </time>
     
@@ -262,7 +270,11 @@
   
     <span>发布在</span>
     
-      <a class="category-link" href="https://imalanzhao.github.io/categories/linux">Linux</a>
+      <a class="category-link" href="https://imalanzhao.github.io/categories/engineering">engineering</a>, 
+    
+      <a class="category-link" href="https://imalanzhao.github.io/categories/dft">DFT</a>, 
+    
+      <a class="category-link" href="https://imalanzhao.github.io/categories/idft">IDFT</a>
     
   
 
@@ -272,96 +284,60 @@
           
           <div class="post-content markdown">
             <div class="main-content-wrap">
-              <p>一直记不住硬盘分区的命令，恰巧最近又折腾Linux，特记录一下。</p>
-<h2 id="查看硬盘">查看硬盘</h2>
-<p>使用<code>fdisk -l</code>命令查看本机所有的硬盘及已有的分区，从下面的输出可以看出要分区的硬盘是<code>/dev/sda</code></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">root@archiso ~ <span style="color:#75715e"># fdisk -l</span>
-Disk /dev/sda: 83.27 GiB, <span style="color:#ae81ff">89409191936</span> bytes, <span style="color:#ae81ff">174627328</span> sectors
-Disk model: VBOX HARDDISK
-Units: sectors of <span style="color:#ae81ff">1</span> * 512 <span style="color:#f92672">=</span> <span style="color:#ae81ff">512</span> bytes
-Sector size <span style="color:#f92672">(</span>logical/physical<span style="color:#f92672">)</span>: <span style="color:#ae81ff">512</span> bytes / <span style="color:#ae81ff">512</span> bytes
-I/O size <span style="color:#f92672">(</span>minimum/optimal<span style="color:#f92672">)</span>: <span style="color:#ae81ff">512</span> bytes / <span style="color:#ae81ff">512</span> bytes
-
-
-Disk /dev/loop0: 653.41 MiB, <span style="color:#ae81ff">685150208</span> bytes, <span style="color:#ae81ff">1338184</span> sectors
-Units: sectors of <span style="color:#ae81ff">1</span> * 512 <span style="color:#f92672">=</span> <span style="color:#ae81ff">512</span> bytes
-Sector size <span style="color:#f92672">(</span>logical/physical<span style="color:#f92672">)</span>: <span style="color:#ae81ff">512</span> bytes / <span style="color:#ae81ff">512</span> bytes
-I/O size <span style="color:#f92672">(</span>minimum/optimal<span style="color:#f92672">)</span>: <span style="color:#ae81ff">512</span> bytes / <span style="color:#ae81ff">512</span> bytes
-</code></pre></div><h2 id="查看是否是uefi模式">查看是否是UEFI模式</h2>
-<p>使用<code>ls /sys/firmware/efi/efivars</code>命令查看是否处于UEFI模式，如果输出中没有报错，就说明处于UEFI模式。这个步骤与后面要进行的EFI分区有关。</p>
-<h2 id="进入分区工具">进入分区工具</h2>
-<p>使用<code>fdisk /dev/sda</code>命令选择要建立分区的硬盘，并进入分区工具。</p>
-<pre tabindex="0"><code>root@archiso ~ # fdisk /dev/sda
-
-Welcome to fdisk (util-linux 2.37.4).
-Changes will remain in memory only, until you decide to write them.
-Be careful before using the write command.
-
-Device does not contain a recognized partition table.
-Created a new DOS disklabel with disk identifier 0xdf8be451.
-
-Command (m for help):
-</code></pre><p>如果 <code>sda</code>已经有了分区，要先删除分区(如果需要的话)。</p>
-<h2 id="创建gpt-partition-table">创建GPT partition table</h2>
-<p>输入<code>g</code>创建一个新的GPT partition table</p>
-<pre tabindex="0"><code>Command (m for help): g
-Created a new GPT disklabel (GUID: AC6E21E4-3582-4E48-919A-028493CDD397).
-</code></pre><h2 id="创建efi分区">创建EFI分区</h2>
-<p>输入<code>n</code>创建分区</p>
-<pre tabindex="0"><code>Command (m for help): n
-Partition number (1-128, default 1):
-First sector (2048-174627294, default 2048):
-Last sector, +/-sectors or +/-size{K,M,G,T,P} (2048-174627294, default 174627294): +512M
-
-Created a new partition 1 of type 'Linux filesystem' and of size 512 MiB.
-</code></pre><p>输入<code>t</code>改变分区类型，然后输入 <code>1</code>选择 &lsquo;EFI System&rsquo;</p>
-<pre tabindex="0"><code>Command (m for help): t
-Selected partition 1
-Partition type or alias (type L to list all): 1
-Changed type of partition 'Linux filesystem' to 'EFI System'.
-</code></pre><h2 id="创建root分区">创建Root分区</h2>
-<pre tabindex="0"><code>Command (m for help): n
-Partition number (2-128, default 2):
-First sector (1050624-174627294, default 1050624):
-Last sector, +/-sectors or +/-size{K,M,G,T,P} (1050624-174627294, default 174627294):
-
-Created a new partition 2 of type 'Linux filesystem' and of size 82.8 GiB.
-</code></pre><p>查看分区完成后的效果：</p>
-<pre tabindex="0"><code>root@archiso ~ # fdisk -l
-Disk /dev/sda: 83.27 GiB, 89409191936 bytes, 174627328 sectors
-Disk model: VBOX HARDDISK
-Units: sectors of 1 * 512 = 512 bytes
-Sector size (logical/physical): 512 bytes / 512 bytes
-I/O size (minimum/optimal): 512 bytes / 512 bytes
-Disklabel type: gpt
-Disk identifier: 7783EFF7-8958-5941-A7A0-923E27864639
-
-Device       Start       End   Sectors  Size Type
-/dev/sda1     2048   1050623   1048576  512M EFI System
-/dev/sda2  1050624 174627294 173576671 82.8G Linux filesystem
-
-
-Disk /dev/loop0: 653.41 MiB, 685150208 bytes, 1338184 sectors
-Units: sectors of 1 * 512 = 512 bytes
-Sector size (logical/physical): 512 bytes / 512 bytes
-I/O size (minimum/optimal): 512 bytes / 512 bytes
-</code></pre><h2 id="创建文件系统">创建文件系统</h2>
-<p>EFI分区要格式化成FAT文件系统，<code>/dev/sda2</code>格式化成ext4。</p>
-<pre tabindex="0"><code>root@archiso ~ # mkfs.fat -F32 /dev/sda1
-mkfs.fat 4.2 (2021-01-31)
-root@archiso ~ # mkfs.ext4 /dev/sda2
-mke2fs 1.46.5 (30-Dec-2021)
-Creating filesystem with 21697083 4k blocks and 5431296 inodes
-Filesystem UUID: 05c937f6-0881-4a59-a37f-81c2c58cf44d
-Superblock backups stored on blocks:
-        32768, 98304, 163840, 229376, 294912, 819200, 884736, 1605632, 2654208,
-        4096000, 7962624, 11239424, 20480000
-
-Allocating group tables: done
-Writing inode tables: done
-Creating journal (131072 blocks): done
-Writing superblocks and filesystem accounting information: done
-</code></pre>
+              <p>本文主要记录我在复习《信号与系统》中对离散傅里叶变换的一些心得，同时列出了一维二维离散傅里叶变换的公式，便于需要时进行查阅。</p>
+<p>最近在看陈后金主编的《信号与系统》，这本书是我念大学时的教材。在“信号的频域分析”的章节中又重温了傅里叶级数和傅里叶变换，从前不大清楚它们的关系和区别，直到这一次复习。</p>
+<p>对于周期信号$\tilde{x}(t)$，可以展开成傅里叶级数 :
+$$
+\tilde{x}(t)=\sum_{n=-\infty}^{+\infty}{C_n}{e^{jnw_0t}}, w_0=\frac{2\pi}{T}
+$$
+而对于非周期信号$x(t)$，则可以使用傅里叶反变换表示：
+$$
+x(t)=\frac{1}{2\pi}\int_{-\infty}^{+\infty}{X(jw)e^{jwt}}dw
+$$
+即当研究周期信号的频谱时使用傅里叶级数，非周期信号则使用傅里叶变换。</p>
+<p>傅里叶变换是从傅里叶级数推导来的（将非周期信号的周期看成$T\rightarrow+\infty$的周期信号），它俩的区别是傅里叶级数是离散的，而傅里叶变换是连续，根本原因是当$T\rightarrow+\infty$时，傅里叶级数中两个频谱间的间隔$\Delta{w}=w_n-w_{n-1}=\frac{2\pi}{T}$趋于零，所以是连续的了。所以傅里叶变换是$\Delta{w}$趋于0的傅里叶级数。</p>
+<p>在复习过程中，我发现《信号与系统》这本书更偏向理论，看完书后，即使明白了傅里叶变换的知识，也很难应用到我们常见的数字信号处理上。例如书中展示的离散傅里叶变换的公式：
+$$
+X(e^{j\Omega})=\sum_{k=-\infty}^{+\infty}{x[k]e^{-j\Omega}}
+$$
+$X(e^{j\Omega})$是离散序列$x[k]$的傅里叶变换，在这个公式中，离散序列$x[k]$是无限的，更为难以理解的是$\Omega$的取值，作者没有介绍$\Omega$与$k$的关系。因此，即便现在有一个离散序列的数据集，我也无法单纯的从这个公式计算出其傅里叶变换的值。</p>
+<p>在冈萨雷斯的《数字图像处理》中，其展示的傅里叶变换公式则更容易使用，其傅里叶变换公式为：
+$$
+F(m)=\sum_{n=0}^{M-1}f(n)e^{-j2\pi{mn}/M},m=0,1,2,&hellip;,M-1
+$$
+$f(n)$为包含$M$个样本的离散序列，$F(m)$是其傅里叶变换。通过这个公式，给定一个离散序列，很容易计算出其傅里叶变换。我直接摘抄书中的一个例子：</p>
+<blockquote>
+<p>离散序列包含4个样本:
+$f(0)$=1
+$f(1)$=2
+$f(2)$=4
+$f(3)$=4，
+求它们的傅里叶变换
+$$F(0)= \sum_{n=0}^{3}{f(n)}=f(0)+f(1)+f(2)+f(3)=11$$
+$$F(1)= \sum_{n=0}^{3}{f(n)e^{-j2\pi{(1)n/4}}}=1e^0+2e^{-j\pi/2}+4e^{-j\pi}+4e^{-j3\pi/2}=-3+2j$$
+类似的，有$F(2)=-(1+0j)$，$F(3)=-(3+2j)$。</p>
+</blockquote>
+<p>在我所接触到的工程应用中，处理的几乎都是离散序列，因此我特意写了一篇关于离散傅里叶变换的笔记，以便自己查阅，因为我常常忘记傅里叶变换公式。</p>
+<h2 id="一维离散傅里叶变换">一维离散傅里叶变换</h2>
+<p>对于离散非周期序列$f(n)$，其傅里叶变换(DFT)为
+$$
+F(m)=\sum_{n=0}^{M-1}f(n)e^{-j2\pi{mn}/M},m=0,1,2,&hellip;,M-1
+$$
+傅里叶反变换(IDFT)为
+$$
+f(n)=\frac{1}{M}\sum_{m=0}^{M-1}{F(m)e^{j2\pi{mn}/M}},n=0,1,2,&hellip;,M-1
+$$</p>
+<p>上面公式中，$f(n)$是$M$个值的离散序列，以上傅里叶变换对<strong>适用于任何均匀取样的有限离散样本集。</strong></p>
+<h2 id="二维离散傅里叶变换">二维离散傅里叶变换</h2>
+<p>二维离散傅里叶变换
+$$
+F(u,v)=\sum_{x=0}^{M-1}\sum_{y=0}^{N-1}f(x,y)e^{j2\pi(ux/M+vy/N)}
+$$
+$f(x,y)$为二维离散序列，大小为$M\times{N}$。</p>
+<p>二维离散傅里叶反变换：
+$$
+f(x,y)=\frac{1}{MN}\sum_{u=0}^{M-1}\sum_{v=0}^{N-1}F(u,v)e^{j2\pi(ux/M+vy/N)}
+$$</p>
               
 
 
@@ -375,7 +351,11 @@ Writing superblocks and filesystem accounting information: done
                   <div class="post-footer-tags">
                     <span class="text-color-light text-small">标签</span><br/>
                     
-  <a class="tag tag--primary tag--small" href="https://imalanzhao.github.io/tags/linux/">Linux</a>
+  <a class="tag tag--primary tag--small" href="https://imalanzhao.github.io/tags/math/">math</a>
+
+  <a class="tag tag--primary tag--small" href="https://imalanzhao.github.io/tags/engineering/">engineering</a>
+
+  <a class="tag tag--primary tag--small" href="https://imalanzhao.github.io/tags/dft/">DFT</a>
 
                   </div>
                 
@@ -388,7 +368,7 @@ Writing superblocks and filesystem accounting information: done
       
         <li class="post-action">
           
-            <a class="post-action-btn btn btn--default tooltip--top" href="https://imalanzhao.github.io/post/discrete_fourier_transform/" data-tooltip="离散傅里叶变换" aria-label="下一篇: 离散傅里叶变换">
+            <a class="post-action-btn btn btn--default tooltip--top" href="https://imalanzhao.github.io/post/understanding_of_convolution/" data-tooltip="卷积的理解" aria-label="下一篇: 卷积的理解">
           
               <i class="fa fa-angle-left"></i>
               <span class="hide-xs hide-sm text-small icon-ml">下一篇</span>
@@ -396,7 +376,7 @@ Writing superblocks and filesystem accounting information: done
         </li>
         <li class="post-action">
           
-            <a class="post-action-btn btn btn--default tooltip--top" href="https://imalanzhao.github.io/post/line-fitting/" data-tooltip="直线拟合(最小二乘法)" aria-label="上一篇: 直线拟合(最小二乘法)">
+            <a class="post-action-btn btn btn--default tooltip--top" href="https://imalanzhao.github.io/post/arch-linux_partition/" data-tooltip="Arch Linux硬盘分区" aria-label="上一篇: Arch Linux硬盘分区">
           
               <span class="hide-xs hide-sm text-small icon-mr">上一篇</span>
               <i class="fa fa-angle-right"></i>
@@ -414,19 +394,19 @@ Writing superblocks and filesystem accounting information: done
     </li>
     
       <li class="post-action hide-xs">
-        <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://imalanzhao.github.io/post/arch-linux_partition/" title="分享到 Facebook" aria-label="分享到 Facebook">
+        <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://imalanzhao.github.io/post/discrete_fourier_transform/" title="分享到 Facebook" aria-label="分享到 Facebook">
           <i class="fab fa-facebook-square" aria-hidden="true"></i>
         </a>
       </li>
     
       <li class="post-action hide-xs">
-        <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://imalanzhao.github.io/post/arch-linux_partition/" title="分享到 Twitter" aria-label="分享到 Twitter">
+        <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://imalanzhao.github.io/post/discrete_fourier_transform/" title="分享到 Twitter" aria-label="分享到 Twitter">
           <i class="fab fa-twitter" aria-hidden="true"></i>
         </a>
       </li>
     
       <li class="post-action hide-xs">
-        <a class="post-action-btn btn btn--default" target="new" href="https://www.linkedin.com/sharing/share-offsite/?url=https://imalanzhao.github.io/post/arch-linux_partition/" title="分享到 Linkedin" aria-label="分享到 Linkedin">
+        <a class="post-action-btn btn btn--default" target="new" href="https://www.linkedin.com/sharing/share-offsite/?url=https://imalanzhao.github.io/post/discrete_fourier_transform/" title="分享到 Linkedin" aria-label="分享到 Linkedin">
           <i class="fab fa-linkedin" aria-hidden="true"></i>
         </a>
       </li>
@@ -457,9 +437,9 @@ Writing superblocks and filesystem accounting information: done
     </div>
     <script type="text/javascript">
       var disqus_config = function() {
-        this.page.url = 'https:\/\/imalanzhao.github.io\/post\/arch-linux_partition\/';
+        this.page.url = 'https:\/\/imalanzhao.github.io\/post\/discrete_fourier_transform\/';
         
-          this.page.identifier = '\/post\/arch-linux_partition\/'
+          this.page.identifier = '\/post\/discrete_fourier_transform\/'
         
       };
       (function() {
@@ -495,7 +475,7 @@ Writing superblocks and filesystem accounting information: done
       
         <li class="post-action">
           
-            <a class="post-action-btn btn btn--default tooltip--top" href="https://imalanzhao.github.io/post/discrete_fourier_transform/" data-tooltip="离散傅里叶变换" aria-label="下一篇: 离散傅里叶变换">
+            <a class="post-action-btn btn btn--default tooltip--top" href="https://imalanzhao.github.io/post/understanding_of_convolution/" data-tooltip="卷积的理解" aria-label="下一篇: 卷积的理解">
           
               <i class="fa fa-angle-left"></i>
               <span class="hide-xs hide-sm text-small icon-ml">下一篇</span>
@@ -503,7 +483,7 @@ Writing superblocks and filesystem accounting information: done
         </li>
         <li class="post-action">
           
-            <a class="post-action-btn btn btn--default tooltip--top" href="https://imalanzhao.github.io/post/line-fitting/" data-tooltip="直线拟合(最小二乘法)" aria-label="上一篇: 直线拟合(最小二乘法)">
+            <a class="post-action-btn btn btn--default tooltip--top" href="https://imalanzhao.github.io/post/arch-linux_partition/" data-tooltip="Arch Linux硬盘分区" aria-label="上一篇: Arch Linux硬盘分区">
           
               <span class="hide-xs hide-sm text-small icon-mr">上一篇</span>
               <i class="fa fa-angle-right"></i>
@@ -521,19 +501,19 @@ Writing superblocks and filesystem accounting information: done
     </li>
     
       <li class="post-action hide-xs">
-        <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://imalanzhao.github.io/post/arch-linux_partition/" title="分享到 Facebook" aria-label="分享到 Facebook">
+        <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://imalanzhao.github.io/post/discrete_fourier_transform/" title="分享到 Facebook" aria-label="分享到 Facebook">
           <i class="fab fa-facebook-square" aria-hidden="true"></i>
         </a>
       </li>
     
       <li class="post-action hide-xs">
-        <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://imalanzhao.github.io/post/arch-linux_partition/" title="分享到 Twitter" aria-label="分享到 Twitter">
+        <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://imalanzhao.github.io/post/discrete_fourier_transform/" title="分享到 Twitter" aria-label="分享到 Twitter">
           <i class="fab fa-twitter" aria-hidden="true"></i>
         </a>
       </li>
     
       <li class="post-action hide-xs">
-        <a class="post-action-btn btn btn--default" target="new" href="https://www.linkedin.com/sharing/share-offsite/?url=https://imalanzhao.github.io/post/arch-linux_partition/" title="分享到 Linkedin" aria-label="分享到 Linkedin">
+        <a class="post-action-btn btn btn--default" target="new" href="https://www.linkedin.com/sharing/share-offsite/?url=https://imalanzhao.github.io/post/discrete_fourier_transform/" title="分享到 Linkedin" aria-label="分享到 Linkedin">
           <i class="fab fa-linkedin" aria-hidden="true"></i>
         </a>
       </li>
@@ -564,19 +544,19 @@ Writing superblocks and filesystem accounting information: done
   <ul class="share-options">
     
       <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fimalanzhao.github.io%2Fpost%2Farch-linux_partition%2F" aria-label="分享到 Facebook">
+        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fimalanzhao.github.io%2Fpost%2Fdiscrete_fourier_transform%2F" aria-label="分享到 Facebook">
           <i class="fab fa-facebook-square" aria-hidden="true"></i><span>分享到 Facebook</span>
         </a>
       </li>
     
       <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3A%2F%2Fimalanzhao.github.io%2Fpost%2Farch-linux_partition%2F" aria-label="分享到 Twitter">
+        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3A%2F%2Fimalanzhao.github.io%2Fpost%2Fdiscrete_fourier_transform%2F" aria-label="分享到 Twitter">
           <i class="fab fa-twitter" aria-hidden="true"></i><span>分享到 Twitter</span>
         </a>
       </li>
     
       <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fimalanzhao.github.io%2Fpost%2Farch-linux_partition%2F" aria-label="分享到 Linkedin">
+        <a class="share-option-btn" target="new" href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fimalanzhao.github.io%2Fpost%2Fdiscrete_fourier_transform%2F" aria-label="分享到 Linkedin">
           <i class="fab fa-linkedin" aria-hidden="true"></i><span>分享到 Linkedin</span>
         </a>
       </li>

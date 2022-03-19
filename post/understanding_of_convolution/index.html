@@ -16,9 +16,9 @@
     
   },
   "name":"Zhaoyc\u0027s blog",
-  "description":"\u003cp\u003e一直记不住硬盘分区的命令，恰巧最近又折腾Linux，特记录一下。\u003c\/p\u003e",
-  "url":"https:\/\/imalanzhao.github.io\/post\/arch-linux_partition\/",
-  "keywords":"[Linux]"
+  "description":"\u003cp\u003e本文的重点是摘抄了《信号与系统》一书中卷积过程图形化的叙述，主要是这一叙述解决了我多年来对卷积物理意义的困惑。\u003c\/p\u003e",
+  "url":"https:\/\/imalanzhao.github.io\/post\/understanding_of_convolution\/",
+  "keywords":"[卷积]"
 }
 
 </script>
@@ -27,36 +27,40 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="generator" content="Hugo 0.92.2 with theme Tranquilpeak 0.5.3-BETA">
 <meta name="author" content="Zhaoyc">
-<meta name="keywords" content="Linux">
-<meta name="description" content="一直记不住硬盘分区的命令，恰巧最近又折腾Linux，特记录一下。">
+<meta name="keywords" content="卷积">
+<meta name="description" content="本文的重点是摘抄了《信号与系统》一书中卷积过程图形化的叙述，主要是这一叙述解决了我多年来对卷积物理意义的困惑。">
 
 
-<meta property="og:description" content="一直记不住硬盘分区的命令，恰巧最近又折腾Linux，特记录一下。">
+<meta property="og:description" content="本文的重点是摘抄了《信号与系统》一书中卷积过程图形化的叙述，主要是这一叙述解决了我多年来对卷积物理意义的困惑。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Arch Linux硬盘分区">
-<meta name="twitter:title" content="Arch Linux硬盘分区">
-<meta property="og:url" content="https://imalanzhao.github.io/post/arch-linux_partition/">
-<meta property="twitter:url" content="https://imalanzhao.github.io/post/arch-linux_partition/">
+<meta property="og:title" content="卷积的理解">
+<meta name="twitter:title" content="卷积的理解">
+<meta property="og:url" content="https://imalanzhao.github.io/post/understanding_of_convolution/">
+<meta property="twitter:url" content="https://imalanzhao.github.io/post/understanding_of_convolution/">
 <meta property="og:site_name" content="Zhaoyc&#39;s blog">
-<meta property="og:description" content="一直记不住硬盘分区的命令，恰巧最近又折腾Linux，特记录一下。">
-<meta name="twitter:description" content="一直记不住硬盘分区的命令，恰巧最近又折腾Linux，特记录一下。">
+<meta property="og:description" content="本文的重点是摘抄了《信号与系统》一书中卷积过程图形化的叙述，主要是这一叙述解决了我多年来对卷积物理意义的困惑。">
+<meta name="twitter:description" content="本文的重点是摘抄了《信号与系统》一书中卷积过程图形化的叙述，主要是这一叙述解决了我多年来对卷积物理意义的困惑。">
 <meta property="og:locale" content="zh-cn">
 
   
-    <meta property="article:published_time" content="2022-03-05T23:04:57">
+    <meta property="article:published_time" content="2022-03-19T11:44:18">
   
   
-    <meta property="article:modified_time" content="2022-03-05T23:04:57">
+    <meta property="article:modified_time" content="2022-03-19T11:44:18">
   
-  
-  
-    
-      <meta property="article:section" content="Linux">
-    
   
   
     
-      <meta property="article:tag" content="Linux">
+      <meta property="article:section" content="engineering">
+    
+      <meta property="article:section" content="convolution">
+    
+  
+  
+    
+      <meta property="article:tag" content="engineering">
+    
+      <meta property="article:tag" content="math">
     
   
 
@@ -77,14 +81,14 @@
 
 
 
-    <title>Arch Linux硬盘分区</title>
+    <title>卷积的理解</title>
 
     <link rel="icon" href="https://imalanzhao.github.io/favicon.png">
     
 
     
 
-    <link rel="canonical" href="https://imalanzhao.github.io/post/arch-linux_partition/">
+    <link rel="canonical" href="https://imalanzhao.github.io/post/understanding_of_convolution/">
 
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -245,15 +249,15 @@
             <div class="post-header main-content-wrap text-left">
   
     <h1 class="post-title">
-      Arch Linux硬盘分区
+      卷积的理解
     </h1>
   
   
   <div class="postShorten-meta post-meta">
     
-      <time datetime="2022-03-05T23:04:57&#43;08:00">
+      <time datetime="2022-03-19T11:44:18&#43;08:00">
         
-  三月 5, 2022
+  三月 19, 2022
 
       </time>
     
@@ -262,7 +266,9 @@
   
     <span>发布在</span>
     
-      <a class="category-link" href="https://imalanzhao.github.io/categories/linux">Linux</a>
+      <a class="category-link" href="https://imalanzhao.github.io/categories/engineering">engineering</a>, 
+    
+      <a class="category-link" href="https://imalanzhao.github.io/categories/convolution">convolution</a>
     
   
 
@@ -272,96 +278,38 @@
           
           <div class="post-content markdown">
             <div class="main-content-wrap">
-              <p>一直记不住硬盘分区的命令，恰巧最近又折腾Linux，特记录一下。</p>
-<h2 id="查看硬盘">查看硬盘</h2>
-<p>使用<code>fdisk -l</code>命令查看本机所有的硬盘及已有的分区，从下面的输出可以看出要分区的硬盘是<code>/dev/sda</code></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">root@archiso ~ <span style="color:#75715e"># fdisk -l</span>
-Disk /dev/sda: 83.27 GiB, <span style="color:#ae81ff">89409191936</span> bytes, <span style="color:#ae81ff">174627328</span> sectors
-Disk model: VBOX HARDDISK
-Units: sectors of <span style="color:#ae81ff">1</span> * 512 <span style="color:#f92672">=</span> <span style="color:#ae81ff">512</span> bytes
-Sector size <span style="color:#f92672">(</span>logical/physical<span style="color:#f92672">)</span>: <span style="color:#ae81ff">512</span> bytes / <span style="color:#ae81ff">512</span> bytes
-I/O size <span style="color:#f92672">(</span>minimum/optimal<span style="color:#f92672">)</span>: <span style="color:#ae81ff">512</span> bytes / <span style="color:#ae81ff">512</span> bytes
-
-
-Disk /dev/loop0: 653.41 MiB, <span style="color:#ae81ff">685150208</span> bytes, <span style="color:#ae81ff">1338184</span> sectors
-Units: sectors of <span style="color:#ae81ff">1</span> * 512 <span style="color:#f92672">=</span> <span style="color:#ae81ff">512</span> bytes
-Sector size <span style="color:#f92672">(</span>logical/physical<span style="color:#f92672">)</span>: <span style="color:#ae81ff">512</span> bytes / <span style="color:#ae81ff">512</span> bytes
-I/O size <span style="color:#f92672">(</span>minimum/optimal<span style="color:#f92672">)</span>: <span style="color:#ae81ff">512</span> bytes / <span style="color:#ae81ff">512</span> bytes
-</code></pre></div><h2 id="查看是否是uefi模式">查看是否是UEFI模式</h2>
-<p>使用<code>ls /sys/firmware/efi/efivars</code>命令查看是否处于UEFI模式，如果输出中没有报错，就说明处于UEFI模式。这个步骤与后面要进行的EFI分区有关。</p>
-<h2 id="进入分区工具">进入分区工具</h2>
-<p>使用<code>fdisk /dev/sda</code>命令选择要建立分区的硬盘，并进入分区工具。</p>
-<pre tabindex="0"><code>root@archiso ~ # fdisk /dev/sda
-
-Welcome to fdisk (util-linux 2.37.4).
-Changes will remain in memory only, until you decide to write them.
-Be careful before using the write command.
-
-Device does not contain a recognized partition table.
-Created a new DOS disklabel with disk identifier 0xdf8be451.
-
-Command (m for help):
-</code></pre><p>如果 <code>sda</code>已经有了分区，要先删除分区(如果需要的话)。</p>
-<h2 id="创建gpt-partition-table">创建GPT partition table</h2>
-<p>输入<code>g</code>创建一个新的GPT partition table</p>
-<pre tabindex="0"><code>Command (m for help): g
-Created a new GPT disklabel (GUID: AC6E21E4-3582-4E48-919A-028493CDD397).
-</code></pre><h2 id="创建efi分区">创建EFI分区</h2>
-<p>输入<code>n</code>创建分区</p>
-<pre tabindex="0"><code>Command (m for help): n
-Partition number (1-128, default 1):
-First sector (2048-174627294, default 2048):
-Last sector, +/-sectors or +/-size{K,M,G,T,P} (2048-174627294, default 174627294): +512M
-
-Created a new partition 1 of type 'Linux filesystem' and of size 512 MiB.
-</code></pre><p>输入<code>t</code>改变分区类型，然后输入 <code>1</code>选择 &lsquo;EFI System&rsquo;</p>
-<pre tabindex="0"><code>Command (m for help): t
-Selected partition 1
-Partition type or alias (type L to list all): 1
-Changed type of partition 'Linux filesystem' to 'EFI System'.
-</code></pre><h2 id="创建root分区">创建Root分区</h2>
-<pre tabindex="0"><code>Command (m for help): n
-Partition number (2-128, default 2):
-First sector (1050624-174627294, default 1050624):
-Last sector, +/-sectors or +/-size{K,M,G,T,P} (1050624-174627294, default 174627294):
-
-Created a new partition 2 of type 'Linux filesystem' and of size 82.8 GiB.
-</code></pre><p>查看分区完成后的效果：</p>
-<pre tabindex="0"><code>root@archiso ~ # fdisk -l
-Disk /dev/sda: 83.27 GiB, 89409191936 bytes, 174627328 sectors
-Disk model: VBOX HARDDISK
-Units: sectors of 1 * 512 = 512 bytes
-Sector size (logical/physical): 512 bytes / 512 bytes
-I/O size (minimum/optimal): 512 bytes / 512 bytes
-Disklabel type: gpt
-Disk identifier: 7783EFF7-8958-5941-A7A0-923E27864639
-
-Device       Start       End   Sectors  Size Type
-/dev/sda1     2048   1050623   1048576  512M EFI System
-/dev/sda2  1050624 174627294 173576671 82.8G Linux filesystem
-
-
-Disk /dev/loop0: 653.41 MiB, 685150208 bytes, 1338184 sectors
-Units: sectors of 1 * 512 = 512 bytes
-Sector size (logical/physical): 512 bytes / 512 bytes
-I/O size (minimum/optimal): 512 bytes / 512 bytes
-</code></pre><h2 id="创建文件系统">创建文件系统</h2>
-<p>EFI分区要格式化成FAT文件系统，<code>/dev/sda2</code>格式化成ext4。</p>
-<pre tabindex="0"><code>root@archiso ~ # mkfs.fat -F32 /dev/sda1
-mkfs.fat 4.2 (2021-01-31)
-root@archiso ~ # mkfs.ext4 /dev/sda2
-mke2fs 1.46.5 (30-Dec-2021)
-Creating filesystem with 21697083 4k blocks and 5431296 inodes
-Filesystem UUID: 05c937f6-0881-4a59-a37f-81c2c58cf44d
-Superblock backups stored on blocks:
-        32768, 98304, 163840, 229376, 294912, 819200, 884736, 1605632, 2654208,
-        4096000, 7962624, 11239424, 20480000
-
-Allocating group tables: done
-Writing inode tables: done
-Creating journal (131072 blocks): done
-Writing superblocks and filesystem accounting information: done
-</code></pre>
+              <p>本文的重点是摘抄了《信号与系统》一书中卷积过程图形化的叙述，主要是这一叙述解决了我多年来对卷积物理意义的困惑。</p>
+<p>2022年过完年来深圳后，新冠疫情一直持续不断，最近更是呈现多个区域集体爆发的趋势，为了抑制住疫情的扩张，市政府于这周开始暂停了公共交通，要求大家居家办公。</p>
+<p>居家办公事情就少了，遂复习起了大学时学习的《信号与系统》(陈后金)，在介绍到卷积时作者使用图形的方法把卷积这种比较抽象的概念形象化了，终于解决了我多年来的疑惑。</p>
+<p>多年来，我始终无法理解卷积这一数学方法的意义，嗯，当然现在我也没理解其中的意义，但是现在我至少知道了卷积公式背后的计算过程。虽然资质平庸，但日拱一卒，日积月累，兴许也可“以成江海”。</p>
+<h2 id="卷积的定义">卷积的定义</h2>
+<p>对于两个信号$x(t)$和$h(t)$，两者做卷积运算定义为：
+$$
+y(t)=x(t)*h(t)=\int_{-\infty}^{+\infty}{x(\tau)h(t-\tau)d\tau}
+$$</p>
+<h2 id="卷积的理解">卷积的理解</h2>
+<p>根据卷积的定义，积分变量为$\tau$。$h(t-\tau)$说明$h(\tau)$有翻转和平移的过程，将$x(t)$与$h(t-\tau)$相相乘，对乘积结果进行积分即可计算出卷积的结果。
+卷积计算可以分成5个步骤：</p>
+<ol>
+<li>将$x(t)$和$h(t)$的自变量由$t$改为$\tau$，$\tau$成为函数的自变量；</li>
+<li>将$h(\tau)$翻转得$h(-\tau)$;</li>
+<li>将$h(-\tau)$平移$t$，成为$h(t-\tau)$，$t$是参变量。$t&gt;0$时，图形右移；$t&lt;0$时图形左移；</li>
+<li>将$x(\tau)$与$h(t-\tau)$相乘；</li>
+<li>对乘积进行积分；</li>
+</ol>
+<blockquote>
+<p>Convolution的wiki百科中也用图形化介绍了这一过程，并且使用动画展示了整个过程，在&quot;Visual explanation&quot;小节，传送门： <a href="https://en.wikipedia.org/wiki/Convolution">Convolution</a></p>
+</blockquote>
+<h2 id="离散卷积">离散卷积</h2>
+<p>对于离散序列的情况，两个离散序列的卷积为：
+$$
+f(x)\star{h(x)}=\sum_{x=0}^{M-1}f(m)h(x-m)
+$$</p>
+<h2 id="卷积定理">卷积定理</h2>
+<p>两个函数卷积的傅里叶变换等于这两个函数的傅里叶变换的乘积
+$$
+\mathcal{F}[f(x)\star{h(x)}]=F(w)H(w)
+$$</p>
               
 
 
@@ -375,7 +323,9 @@ Writing superblocks and filesystem accounting information: done
                   <div class="post-footer-tags">
                     <span class="text-color-light text-small">标签</span><br/>
                     
-  <a class="tag tag--primary tag--small" href="https://imalanzhao.github.io/tags/linux/">Linux</a>
+  <a class="tag tag--primary tag--small" href="https://imalanzhao.github.io/tags/engineering/">engineering</a>
+
+  <a class="tag tag--primary tag--small" href="https://imalanzhao.github.io/tags/math/">math</a>
 
                   </div>
                 
@@ -388,7 +338,7 @@ Writing superblocks and filesystem accounting information: done
       
         <li class="post-action">
           
-            <a class="post-action-btn btn btn--default tooltip--top" href="https://imalanzhao.github.io/post/discrete_fourier_transform/" data-tooltip="离散傅里叶变换" aria-label="下一篇: 离散傅里叶变换">
+            <a class="post-action-btn btn btn--disabled">
           
               <i class="fa fa-angle-left"></i>
               <span class="hide-xs hide-sm text-small icon-ml">下一篇</span>
@@ -396,7 +346,7 @@ Writing superblocks and filesystem accounting information: done
         </li>
         <li class="post-action">
           
-            <a class="post-action-btn btn btn--default tooltip--top" href="https://imalanzhao.github.io/post/line-fitting/" data-tooltip="直线拟合(最小二乘法)" aria-label="上一篇: 直线拟合(最小二乘法)">
+            <a class="post-action-btn btn btn--default tooltip--top" href="https://imalanzhao.github.io/post/discrete_fourier_transform/" data-tooltip="离散傅里叶变换" aria-label="上一篇: 离散傅里叶变换">
           
               <span class="hide-xs hide-sm text-small icon-mr">上一篇</span>
               <i class="fa fa-angle-right"></i>
@@ -414,19 +364,19 @@ Writing superblocks and filesystem accounting information: done
     </li>
     
       <li class="post-action hide-xs">
-        <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://imalanzhao.github.io/post/arch-linux_partition/" title="分享到 Facebook" aria-label="分享到 Facebook">
+        <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://imalanzhao.github.io/post/understanding_of_convolution/" title="分享到 Facebook" aria-label="分享到 Facebook">
           <i class="fab fa-facebook-square" aria-hidden="true"></i>
         </a>
       </li>
     
       <li class="post-action hide-xs">
-        <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://imalanzhao.github.io/post/arch-linux_partition/" title="分享到 Twitter" aria-label="分享到 Twitter">
+        <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://imalanzhao.github.io/post/understanding_of_convolution/" title="分享到 Twitter" aria-label="分享到 Twitter">
           <i class="fab fa-twitter" aria-hidden="true"></i>
         </a>
       </li>
     
       <li class="post-action hide-xs">
-        <a class="post-action-btn btn btn--default" target="new" href="https://www.linkedin.com/sharing/share-offsite/?url=https://imalanzhao.github.io/post/arch-linux_partition/" title="分享到 Linkedin" aria-label="分享到 Linkedin">
+        <a class="post-action-btn btn btn--default" target="new" href="https://www.linkedin.com/sharing/share-offsite/?url=https://imalanzhao.github.io/post/understanding_of_convolution/" title="分享到 Linkedin" aria-label="分享到 Linkedin">
           <i class="fab fa-linkedin" aria-hidden="true"></i>
         </a>
       </li>
@@ -457,9 +407,9 @@ Writing superblocks and filesystem accounting information: done
     </div>
     <script type="text/javascript">
       var disqus_config = function() {
-        this.page.url = 'https:\/\/imalanzhao.github.io\/post\/arch-linux_partition\/';
+        this.page.url = 'https:\/\/imalanzhao.github.io\/post\/understanding_of_convolution\/';
         
-          this.page.identifier = '\/post\/arch-linux_partition\/'
+          this.page.identifier = '\/post\/understanding_of_convolution\/'
         
       };
       (function() {
@@ -495,7 +445,7 @@ Writing superblocks and filesystem accounting information: done
       
         <li class="post-action">
           
-            <a class="post-action-btn btn btn--default tooltip--top" href="https://imalanzhao.github.io/post/discrete_fourier_transform/" data-tooltip="离散傅里叶变换" aria-label="下一篇: 离散傅里叶变换">
+            <a class="post-action-btn btn btn--disabled">
           
               <i class="fa fa-angle-left"></i>
               <span class="hide-xs hide-sm text-small icon-ml">下一篇</span>
@@ -503,7 +453,7 @@ Writing superblocks and filesystem accounting information: done
         </li>
         <li class="post-action">
           
-            <a class="post-action-btn btn btn--default tooltip--top" href="https://imalanzhao.github.io/post/line-fitting/" data-tooltip="直线拟合(最小二乘法)" aria-label="上一篇: 直线拟合(最小二乘法)">
+            <a class="post-action-btn btn btn--default tooltip--top" href="https://imalanzhao.github.io/post/discrete_fourier_transform/" data-tooltip="离散傅里叶变换" aria-label="上一篇: 离散傅里叶变换">
           
               <span class="hide-xs hide-sm text-small icon-mr">上一篇</span>
               <i class="fa fa-angle-right"></i>
@@ -521,19 +471,19 @@ Writing superblocks and filesystem accounting information: done
     </li>
     
       <li class="post-action hide-xs">
-        <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://imalanzhao.github.io/post/arch-linux_partition/" title="分享到 Facebook" aria-label="分享到 Facebook">
+        <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://imalanzhao.github.io/post/understanding_of_convolution/" title="分享到 Facebook" aria-label="分享到 Facebook">
           <i class="fab fa-facebook-square" aria-hidden="true"></i>
         </a>
       </li>
     
       <li class="post-action hide-xs">
-        <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://imalanzhao.github.io/post/arch-linux_partition/" title="分享到 Twitter" aria-label="分享到 Twitter">
+        <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://imalanzhao.github.io/post/understanding_of_convolution/" title="分享到 Twitter" aria-label="分享到 Twitter">
           <i class="fab fa-twitter" aria-hidden="true"></i>
         </a>
       </li>
     
       <li class="post-action hide-xs">
-        <a class="post-action-btn btn btn--default" target="new" href="https://www.linkedin.com/sharing/share-offsite/?url=https://imalanzhao.github.io/post/arch-linux_partition/" title="分享到 Linkedin" aria-label="分享到 Linkedin">
+        <a class="post-action-btn btn btn--default" target="new" href="https://www.linkedin.com/sharing/share-offsite/?url=https://imalanzhao.github.io/post/understanding_of_convolution/" title="分享到 Linkedin" aria-label="分享到 Linkedin">
           <i class="fab fa-linkedin" aria-hidden="true"></i>
         </a>
       </li>
@@ -564,19 +514,19 @@ Writing superblocks and filesystem accounting information: done
   <ul class="share-options">
     
       <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fimalanzhao.github.io%2Fpost%2Farch-linux_partition%2F" aria-label="分享到 Facebook">
+        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fimalanzhao.github.io%2Fpost%2Funderstanding_of_convolution%2F" aria-label="分享到 Facebook">
           <i class="fab fa-facebook-square" aria-hidden="true"></i><span>分享到 Facebook</span>
         </a>
       </li>
     
       <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3A%2F%2Fimalanzhao.github.io%2Fpost%2Farch-linux_partition%2F" aria-label="分享到 Twitter">
+        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3A%2F%2Fimalanzhao.github.io%2Fpost%2Funderstanding_of_convolution%2F" aria-label="分享到 Twitter">
           <i class="fab fa-twitter" aria-hidden="true"></i><span>分享到 Twitter</span>
         </a>
       </li>
     
       <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fimalanzhao.github.io%2Fpost%2Farch-linux_partition%2F" aria-label="分享到 Linkedin">
+        <a class="share-option-btn" target="new" href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fimalanzhao.github.io%2Fpost%2Funderstanding_of_convolution%2F" aria-label="分享到 Linkedin">
           <i class="fab fa-linkedin" aria-hidden="true"></i><span>分享到 Linkedin</span>
         </a>
       </li>
