@@ -294,9 +294,12 @@ $$
 $$
 x(t)=\frac{1}{2\pi}\int_{-\infty}^{+\infty}{X(jw)e^{jwt}}dw
 $$
-即当研究周期信号的频谱时使用傅里叶级数，非周期信号则使用傅里叶变换。</p>
-<p>傅里叶变换是从傅里叶级数推导来的（将非周期信号的周期看成$T\rightarrow+\infty$的周期信号），它俩的区别是傅里叶级数是离散的，而傅里叶变换是连续，根本原因是当$T\rightarrow+\infty$时，傅里叶级数中两个频谱间的间隔$\Delta{w}=w_n-w_{n-1}=\frac{2\pi}{T}$趋于零，所以是连续的了。所以傅里叶变换是$\Delta{w}$趋于0的傅里叶级数。</p>
-<p>在复习过程中，我发现《信号与系统》这本书更偏向理论，看完书后，即使明白了傅里叶变换的知识，也很难应用到我们常见的数字信号处理上。例如书中展示的离散傅里叶变换的公式：
+即当<strong>研究周期信号的频谱时使用傅里叶级数，非周期信号则使用傅里叶变换。</strong></p>
+<h2 id="傅里叶级数与傅里叶变换">傅里叶级数与傅里叶变换</h2>
+<p>傅里叶变换是从傅里叶级数推导来的（将非周期信号的周期看成$T\rightarrow+\infty$的周期信号），它俩的区别是傅里叶级数是离散的，而傅里叶变换是连续，根本原因是当$T\rightarrow+\infty$时，傅里叶级数中两个频谱间的间隔$\Delta{w}=w_n-w_{n-1}=\frac{2\pi}{T}$趋于零，就变成连续的了。<strong>所以傅里叶变换是$\Delta{w}$趋于0的傅里叶级数。</strong></p>
+<h2 id="一维离散傅里叶变换">一维离散傅里叶变换</h2>
+<p>以上是连续变量的傅里叶变换，然而在我所接触到的工程应用中，处理的几乎都是离散序列。
+《信号与系统》这本书更偏向理论，看完书后，即使明白了傅里叶变换的知识，也很难应用到我们常见的数字信号处理上。例如书中展示的离散傅里叶变换的公式：
 $$
 X(e^{j\Omega})=\sum_{k=-\infty}^{+\infty}{x[k]e^{-j\Omega}}
 $$
@@ -305,7 +308,7 @@ $X(e^{j\Omega})$是离散序列$x[k]$的傅里叶变换，在这个公式中，�
 $$
 F(m)=\sum_{n=0}^{M-1}f(n)e^{-j2\pi{mn}/M},m=0,1,2,&hellip;,M-1
 $$
-$f(n)$为包含$M$个样本的离散序列，$F(m)$是其傅里叶变换。通过这个公式，给定一个离散序列，很容易计算出其傅里叶变换。我直接摘抄书中的一个例子：</p>
+$f(n)$为包含$M$个样本的离散序列，$F(m)$是其傅里叶变换，<strong>这个公式适用于任何均匀取样的有限离散样本集。</strong>。通过这个公式，给定一个离散序列，很容易计算出其傅里叶变换。我直接摘抄书中的一个例子：</p>
 <blockquote>
 <p>离散序列包含4个样本:
 $f(0)$=1
@@ -317,23 +320,84 @@ $$F(0)= \sum_{n=0}^{3}{f(n)}=f(0)+f(1)+f(2)+f(3)=11$$
 $$F(1)= \sum_{n=0}^{3}{f(n)e^{-j2\pi{(1)n/4}}}=1e^0+2e^{-j\pi/2}+4e^{-j\pi}+4e^{-j3\pi/2}=-3+2j$$
 类似的，有$F(2)=-(1+0j)$，$F(3)=-(3+2j)$。</p>
 </blockquote>
-<p>在我所接触到的工程应用中，处理的几乎都是离散序列，因此我特意写了一篇关于离散傅里叶变换的笔记，以便自己查阅，因为我常常忘记傅里叶变换公式。</p>
-<h2 id="一维离散傅里叶变换">一维离散傅里叶变换</h2>
-<p>对于离散非周期序列$f(n)$，其傅里叶变换(DFT)为
+<p>如上面的例子，很容易就计算出了一个序列的傅里叶变换，还可以将这个过程转换成python代码：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">dft</span>(fn:np<span style="color:#f92672">.</span>ndarray):
+	M <span style="color:#f92672">=</span> fn<span style="color:#f92672">.</span>size
+	fm <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>empty(M, np<span style="color:#f92672">.</span>complex_)
+
+ 	pi2M <span style="color:#f92672">=</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">2</span><span style="color:#f92672">*</span>math<span style="color:#f92672">.</span>pi<span style="color:#f92672">/</span>M
+ 	<span style="color:#66d9ef">for</span> m <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">0</span>, M):
+ 		real <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+ 		virtual <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+ 		<span style="color:#66d9ef">for</span> n <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">0</span>, M):
+			x <span style="color:#f92672">=</span> pi2M <span style="color:#f92672">*</span>m<span style="color:#f92672">*</span>n
+ 			real <span style="color:#f92672">+=</span> fn[n]<span style="color:#f92672">*</span>math<span style="color:#f92672">.</span>cos(x)
+			virtual <span style="color:#f92672">+=</span> fn[n]<span style="color:#f92672">*</span>math<span style="color:#f92672">.</span>sin(x)
+ 		fm[m] <span style="color:#f92672">=</span> real <span style="color:#f92672">+</span> virtual<span style="color:#f92672">*</span><span style="color:#ae81ff">1</span>j
+ 	<span style="color:#66d9ef">return</span> fm
+</code></pre></div><p>相比FFT算法，上面的代码执行效率很低，但是如果散点序列的数量很少时，临时拿来用也是可以的。在一次需要处理36个散点序列时，我使用的平台没有现成的FFT库使用，便根据以上的公式自己撸了代码。</p>
+<h2 id="实际使用">实际使用</h2>
+<p>有时候计算出DFT(离散傅里叶变换)不是我们的最终目的，例如要做的是频率域滤波，我们还需要将DFT乘以滤波器的DFT——$H(m)F(m)$。这里存在两个问题：</p>
+<ol>
+<li>无法直接使用上面公式计算得到的DFT；</li>
+<li>$m$的现实意义是什么？更确切的说，如果你要首先进行频谱分析才能制定出滤波器的参数，你必须要知道$m$到底是什么。</li>
+</ol>
+<p>首先，为什么无法直接使用以上DFT结果进行频率域滤波？有一个比较重点的内容是**$F(m)$在$-\infty$~$+\infty$是一个周期序列**。我们计算的$F(m)$的范围是$[0,M-1]$，这个范围恰好是$F(m)$的一个周期，在这个周期内，其频谱幅度由大到小再到大。</p>
+<p>嗯~~ 举个例子</p>
+<blockquote>
+<p>假设我们计算得到的$F(m)$长下面这个样子，两边的5属于低频分量，1属于更高频率的分量
+$[5,4,3,2,1,1,2,3,4,5]$</p>
+</blockquote>
+<p>现在我们要用一个理想低通滤波器做滤波，只保留等于5的这个频率分量，理想滤波器长这样：</p>
+<blockquote>
+<p>$[0,0,0,0,1,1,0,0,0,0]$</p>
+<p>你会发现它俩的元素一一相乘后的结果是：
+$[0,0,0,0,1,1,0,0,0,0]$</p>
+</blockquote>
+<p>其他分量被消除了，只保留了一个高频分量，这根本不是低通滤波。所以为了实现滤波操作，你希望一个周期内$F(m)$长这样：</p>
+<blockquote>
+<p>$[1,2,3,4,5,5,4,3,2,1]$</p>
+</blockquote>
+<p>那怎么得到上面的哪个样子呢？$F(m)$是一个周期函数，我们将其扩展到 $[0,2M-1]$的区间，得到 ：</p>
+<blockquote>
+<p>[5,4,3,2,1,<strong>1,2,3,4,5,5,4,3,2,1</strong>,1,2,3,4,5]</p>
+</blockquote>
+<p>瞅瞅，左右各去掉5个元素就是我们想要的样子了。在这里我们是向右取，但是书里面要求我们往左取，确保我们取数据的周期的中间点在Y轴(X=0)处，为了自动达成这个操作，我们需要执行操作：$f(n)(-1)^n$，就是我们的离散序列需要乘以$(-1)^n$，这个操作相当于$F(m-M/2)$，体现在代码里面（把上面的代码改一下下）：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">dft</span>(fn:np<span style="color:#f92672">.</span>ndarray):
+	M <span style="color:#f92672">=</span> fn<span style="color:#f92672">.</span>size
+	fm <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>empty(M, np<span style="color:#f92672">.</span>complex_)
+
+ 	pi2M <span style="color:#f92672">=</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">2</span><span style="color:#f92672">*</span>math<span style="color:#f92672">.</span>pi<span style="color:#f92672">/</span>M
+ 	<span style="color:#66d9ef">for</span> m <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">0</span>, M):
+ 		real <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+ 		virtual <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+ 		<span style="color:#66d9ef">for</span> n <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">0</span>, M):
+			x <span style="color:#f92672">=</span> pi2M <span style="color:#f92672">*</span>m<span style="color:#f92672">*</span>n
+			shift <span style="color:#f92672">=</span> shift<span style="color:#f92672">*</span>math<span style="color:#f92672">.</span>pow(<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>, n) <span style="color:#75715e"># f(n)*(-1)^n</span>
+ 			real <span style="color:#f92672">+=</span> shift<span style="color:#f92672">*</span>math<span style="color:#f92672">.</span>cos(x)
+			virtual <span style="color:#f92672">+=</span> fn[n]<span style="color:#f92672">*</span>math<span style="color:#f92672">.</span>sin(x)
+ 		fm[m] <span style="color:#f92672">=</span> real <span style="color:#f92672">+</span> virtual<span style="color:#f92672">*</span><span style="color:#ae81ff">1</span>j
+ 	<span style="color:#66d9ef">return</span> fm
+</code></pre></div><p>写得太长了，让我们回顾一下第二个问题，$m$的现实意义是什么？在我漫长但是不太充足的图像处理生涯中，从来没有关注过这个问题，通常我们对图像做高斯模糊的时候，只要定义高斯核的大小，opencv调用一下就把高频噪声过滤掉了。在图像处理中我们通常不需要了解我们过滤掉的频率是多少，我们只要知道这个地方的频率是我们不想要的，但是它等于多少我们并不在乎。但是在数字信号处理领域，我们可能想要保留100KHz以下的频率，那就要知道$m$=1、2、3……对应的频率是多少，我们才能设计对应的滤波器。$m$对应基础频率的计算公式：
 $$
-F(m)=\sum_{n=0}^{M-1}f(n)e^{-j2\pi{mn}/M},m=0,1,2,&hellip;,M-1
+\Delta{f}=\frac{1}{M\Delta{T}}=\frac{1}{T}
 $$
-傅里叶反变换(IDFT)为
+$M$为离散序列的数量，$\Delta{T}$为采样时间间隔，$T$为采用的总时长。$m=1$时，频率为$\Delta{f}$，$m=2，3$时，频率为$2\Delta{f},3\Delta{f}$，依次类推。</p>
+<p>例如我们0.01S采样一个模拟信号$f(t)$，采样时间为20S，得到的离散序列为$f(n)$，其傅里叶变换为$F(m)$，$m=1$时的频率为$\frac{1}{2000*0.01}=0.05$Hz。</p>
+<p><strong>同时，$\Delta{f}$也是DFT的频率分辨率，相同的$\Delta{T}$下，采样时间越长，分辨率越高</strong>。</p>
+<h2 id="二维离散傅里叶变换">二维离散傅里叶变换</h2>
+<p>二维离散傅里叶变换的公式为：
+$$
+F(u,v)=\sum_{x=0}^{M-1}\sum_{y=0}^{N-1}f(x,y)e^{-j2\pi(ux/M+vy/N)}
+$$
+$f(x,y)$为二维离散序列，大小为$M\times{N}$。</p>
+<p>二维离散傅里叶变换是一维的扩展，一维中存在的特性，二维一样存在。在一维中我们讨论$m$所对应的频率是多少，在二维中，如果我们也要讨论$u,v$所对应的频率，那么我们需要分别计算$\Delta{f}_u$和$\Delta{f}_v$。但是我们很少会在意$\Delta{f}_u$和$\Delta{f}_v$，因为在图像中其频率为空间频率(毫米/周)，如果要计算这两个频率，需要知道图像传感器pixel的采样间距，所以我们通常情况下不会在乎它们。但是图像传感器、摄像机设计厂商会在意，他们会测试一个叫空间频率响应(SFR)的参数，频率响应越好，成像质量越佳。后面我的工作也会设计SFR，到时候研究好了再做一份笔记。</p>
+<p>与一维DFT一样，二维变换也需要将数据的周期的中间放在图像中心，为了保证这点，在进行DFT之前，我们需要执行操作：$f(x,y)(-1)^{x+y}$。</p>
+<h2 id="傅里叶逆变换">傅里叶逆变换</h2>
+<p>对于一维离散非周期序列$f(n)$，其傅里叶逆变换(IDFT)为
 $$
 f(n)=\frac{1}{M}\sum_{m=0}^{M-1}{F(m)e^{j2\pi{mn}/M}},n=0,1,2,&hellip;,M-1
 $$</p>
-<p>上面公式中，$f(n)$是$M$个值的离散序列，以上傅里叶变换对<strong>适用于任何均匀取样的有限离散样本集。</strong></p>
-<h2 id="二维离散傅里叶变换">二维离散傅里叶变换</h2>
-<p>二维离散傅里叶变换
-$$
-F(u,v)=\sum_{x=0}^{M-1}\sum_{y=0}^{N-1}f(x,y)e^{j2\pi(ux/M+vy/N)}
-$$
-$f(x,y)$为二维离散序列，大小为$M\times{N}$。</p>
 <p>二维离散傅里叶反变换：
 $$
 f(x,y)=\frac{1}{MN}\sum_{u=0}^{M-1}\sum_{v=0}^{N-1}F(u,v)e^{j2\pi(ux/M+vy/N)}
